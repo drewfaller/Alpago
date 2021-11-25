@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate') %>
+
+<h1 class="display-4"><%= username %></h1>
+
+<p>photo here</p>
+<img src="" alt="">
+
+<h3>my trips</h3>
+<ul>
+<% for (const trip of trips) { %>
+    <li>
+        <a href="/trips/<%= trip._id %>"><%= trip.name %></a>
+    </li>
+<% } %> 
+</ul>
+
+<a class="btn btn-success" href="/trips/new">Plan A Trip</a>

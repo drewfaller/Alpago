@@ -1,0 +1,73 @@
+<% layout('layouts/boilerplate') %>
+
+<% if(error && error.length) { %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+     </div> 
+ <% } %>
+
+<div>
+    <h1 class="display-4 text-center mb-3">add new user</h1>
+
+    <form action="/users" method="POST" class="needs-validation" novalidate>
+        
+        <div class="mb-4">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" name="username" required>
+            <span class="invalid-feedback">Username Required</span>
+        </div>  
+
+        <div class="mb-4">
+            <label class="form-label" for="name">Password</label>
+            <input class="form-control" type="password" id="name" name="password" required>
+            <span class="invalid-feedback">Password Required</span>
+        </div>  
+
+        <div class="mb-4">
+            <label class="form-label" for="name">Email Address</label>
+            <input class="form-control" type="text" id="name" name="email" required>
+            <span class="invalid-feedback">Email Address Required</span>
+        </div>  
+
+        <h3>Scheduled Days Off</h3>
+        
+        <!-- <div class="row mb-4">
+            <h3>Scheduled Days Off</h3>
+            <div class="row">
+                <div class="form-group">
+                    <label class="form-check-label" for="Sunday">Sunday</label>
+                    <input type="checkbox" id="Sunday" name="Sunday" class="form-check-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label" for="Monday">Monday</label>
+                    <input type="checkbox" id="Monday" name="Monday" class="form-check-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label" for="Tuesday">Tuesday</label>
+                    <input type="checkbox" id="Tuesday" name="Tuesday" class="form-check-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label" for="Wednesday">Wednesday</label>
+                    <input type="checkbox" id="Wednesday" name="Wednesday" class="form-check-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label" for="Thursday">Thursday</label>
+                    <input type="checkbox" id="Thursday" name="Thursday" class="form-check-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label" for="Friday">Friday</label>
+                    <input type="checkbox" id="Friday" name="Friday" class="form-check-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label" for="Saturday">Saturday</label>
+                    <input type="checkbox" id="Saturday" name="Saturday" class="form-check-input">
+                </div>
+            </div>
+        </div> -->
+
+        <h3>Upload Photo</h3>
+        
+        <button class="btn btn-success">Add New User</button>
+
+    </form>
+</div>

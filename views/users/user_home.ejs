@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') %>
+
+<% if(success && success.length) { %>
+    <div class="alert alert-success" role="alert">
+        <%= success %>
+     </div> 
+ <% } %>
+
+<!-- <img src="" alt=""> -->
+
+<h1 class="display-4 text-center mb-3">
+    <%= currentUser.username %>'s dashboard
+</h1>
+
+<p>
+    <a href="/trips/new">Plan a New Trip!</a>
+</p>
+<p>Current days off</p>
+<p>Special days off</p>
+<p>My upcoming trips</p>
+
+<p>My maps</p>
+
+<div>
+    <h3>my trip ideas</h3>
+    <ul>
+        <% for (const trip of trips) { %> 
+        <li>
+            <a href="/trips/ <%= trip._id %> "> <%= trip._id %> </a>
+        </li>
+        <% } %> 
+    </ul>
+</div>
+
+

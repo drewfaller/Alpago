@@ -1,0 +1,57 @@
+<% layout('layouts/boilerplate') %>
+    
+<div>
+    <h1 class=" display-4 text-center mb-3">plan a trip</h1>
+    <form class="needs-validation" action="/trips" method="POST" novalidate>
+       
+    <div class="mb-4">
+        <label class="form-label" for="trip-name">trip name</label>
+        <input class="form-control" type="text" id="trip-name" name="name" required>
+        <span class="invalid-feedback">required field</span>
+    </div>
+
+    <div class="row">
+        <div class="mb-4 col-4">
+            <label class="form-label" for="trip-time">estimated time</label>
+            <input class="form-control" type="number"  id="trip-time" name ="time">
+            <span class="invalid-feedback">required field</span>
+        </div>
+        <div class="mb-4 col-4">
+            <label class="form-label" for="trip-distance">distance</label>
+            <input class="form-control" type="number" id="trip-distance" name="distance">
+            <span class="invalid-feedback">required field</span>
+        </div>
+        <div class="mb-4 col-4">
+            <label class="form-label" for="trip-elevation">elevation gain</label>
+            <input class="form-control" type="number" id="trip-elevation"
+            name="elevation">
+            <span class="invalid-feedback">required field</span>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="mb-4 col">
+            <label class="form-label" for="trip-season">season</label>
+            <input class="form-control" type="string" id="trip-season"
+            name="season">
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label" for="trip-map">CalTopo URL <a href="https://training.caltopo.com/all_users/share/blank-draft-saved" target="_blank">what's this?</a></label>
+        <input class="form-control" type="text" id="trip-map" name="map">
+    </div>
+    <!-- <div>
+        <label class="form-label" for="trip-map">Links</label>
+        <input class="form-control mb-2" type="text" id="trip-link1" name="link1">
+        <input class="form-control" type="text" id="trip-link2" name="link2">
+    </div> -->
+    <div class="mb-4">
+        <label class="form-label" for="trip-notes">notes</label>
+        <textarea rows="3" class="form-control" type="string" id="trip-notes"
+        name="notes"></textarea>
+    </div>
+        
+        <button class="btn btn-success mb-4">submit trip</button>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<% layout('layouts/boilerplate') %>
+<h2><%= success %> </h2>   
+
+<div class="display-4 text-center">users</div>
+    <ul>
+            <% for (let user of users) { %> 
+                <li>
+                    <a href="/users/<%= user.id %>"><%= user.username %></a>
+                </li>
+            <% } %> 
+    </ul>

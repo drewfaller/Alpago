@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %>
+
+<% if(success && success.length) { %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= success %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <% } %>
+  </div>
+
+  <h1 class="display-4 text-center">
+    <%= trip.name %>
+  </h1>
+  <h4>
+    <%= trip.notes %>
+  </h4>
+
+  <img src="" alt="">
+
+  <div class="border border-3 rounded-2 p-3 mb-3">
+    <dl class="row">
+      <dt class="col-sm-4">Elevation:</dt>
+      <dd class="col-sm-8">
+        <%= trip.elevation %> feet
+      </dd>
+      <dt class="col-sm-4">Distance:</dt>
+      <dd class="col-sm-8">
+        <%= trip.distance %> miles
+      </dd>
+      <dt class="col-sm-4">Season:</dt>
+      <dd class="col-sm-8">
+        <%= trip.season %>
+      </dd>
+      <dt class="col-sm-4">Est. time:</dt>
+      <dd class="col-sm-8">
+        <%= trip.time %> hours
+      </dd>
+  </div>
+
+  <h4 class="mb-2">creator: <span> <%= trip.creator.username %> </span> </h4>
+  <h4 class="mb-2">created on:<span>DATE</span> </h4>
+
+  </div>
+  <div class="my-3">Links:
+    <a href="#" class="card-link">ADD WEATHER LINK</a>
+    <a href="#" class="card-link" target="_blank">CalTopo Map</a>
+  </div>
+
+<% if( currentUser && trip.creator.equals(currentUser)) { %> 
+  <div>
+    <a href="/trips/<%= trip._id %>/edit" class="btn btn-info mb-3">edit trip
+    </a>
+
+    <form action="/trips/<%= trip._id %>/users/<%= trip.creator._id %>?_method=DELETE" method="POST">
+      <button class="btn btn-danger mb-3">delete trip</button>
+    </form>
+  </div>
+<% } %> 
+    

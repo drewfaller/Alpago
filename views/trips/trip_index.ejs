@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+
+    <% if(success && success.length) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <% } %>
+        </div>
+
+        <h1 class="display-4 text-center mb-3">all trips</h1>
+        <div class="row justify-content-center">
+            <% if(trips.length===0) {%>
+                <div class="text-center" role="alert">
+                    No Trips Saved!
+                </div>
+                <% } else { %>
+                    <% for(let trip of trips) { %>
+                        <div class="card m-3 p-1 col-6">
+                            <!-- <img src="..." class="card-img-top" alt="..."> -->
+                            <div class="text-center card-body">
+                                <a class="stretched-link" href="/trips/<%= trip._id %> ">
+                                    <h4 class="card-title">
+                                        <%= trip.name %>
+                                    </h4>
+                                </a>
+                                <p class="card-text">
+                                    <%= trip.notes %>
+                                </p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><b>Elevation:</b>
+                                        <%= trip.elevation %> feet
+                                    </li>
+                                    <li class="list-group-item"><b>Distance:</b>
+                                        <%= trip.distance %> miles
+                                    </li>
+                                    <li class="list-group-item"><b>Season:</b>
+                                        <%= trip.season %>
+                                    </li>
+                                    <li class="list-group-item"><b>Estimated time:</b>
+                                        <%= trip.time %> hours
+                                    </li>
+                                    <li class="list-group-item"><b>Created By:</b>
+                                        <%= trip.creator.username %>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <% } } %>
+        </div>
